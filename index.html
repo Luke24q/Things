@@ -1,53 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    /* Изменяем стили для более телеграмовского вида */
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-      background-color: #F8F8F8; /* Изменяем цвет фона */
-    }
-
-    #image {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%; /* Добавляем скругление краев для изображения */
-    }
-
-    #text {
-      font-size: 24px;
-      margin-top: 20px;
-      color: #000; /* Изменяем цвет текста */
-    }
-
-    #button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: #0088CC; /* Изменяем цвет фона кнопки */
-      color: #fff;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-
-    #button:hover {
-      background-color: #005580; /* Изменяем цвет фона кнопки при наведении */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Telegram Web App</title>
 </head>
 <body>
-  <div class="container">
-    <img id="image" src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="Image">
-    <div id="text">Текст</div>
-    <button id="button">Кнопка</button>
-  </div>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-let tg = window.Telegram.WebApp;
-tg.expand();
+    <div class="container">
+        <img src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="Image">
+        <p>This is some text below the image</p>
+        <button>Click me</button>
+    </div>
 </body>
 </html>
