@@ -31,20 +31,20 @@
             color: var(--tg-theme-text-color);
         }
 
-        button {
-            padding: 10px 20px;
-            margin-top: 20px;
-            background-color: var(--tg-theme-button-color, #0088cc);
-            color: var(--tg-theme-button-text-color, #fff);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s; /* Добавляем анимацию изменения цвета кнопки */
-        }
+        #button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: var(--tg-theme-button-color, #0088cc);
+      color: var(--tg-theme-button-text-color, #fff);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer
+      transition: background-color 0.3s ease;
+    }
 
-        button:hover {
-    background-color: rgba(0, 0, 0, 0.5); /* Цвет кнопки при наведении курсора */
-}
+    #button:hover {
+      background-color: #555;
         }
     </style>
     <title>Розыгрыш Zefru shop</title>
