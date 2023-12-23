@@ -42,9 +42,10 @@
             transition: background-color 0.3s; /* Добавляем анимацию изменения цвета кнопки */
         }
 
-        button:active {
-            background-color: rgba(0, 0, 0, 0.5); /* Цвет кнопки после нажатия */
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.1); /* Цвет кнопки при наведении */
         }
+
     </style>
     <title>Telegram Web App</title>
 </head>
@@ -57,9 +58,7 @@
 
     <script>
         document.getElementById('closeBtn').addEventListener('click', function() {
-            // Изменяем цвет кнопки
-            this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)'; // Цвет кнопки после нажатия
-            // Закрываем web app
+            this.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
             let tg = window.Telegram.WebApp;
             tg.close();
         });
