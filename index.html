@@ -31,17 +31,16 @@
             color: var(--tg-theme-text-color);
         }
 
-        #button {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 20px;
-      background-color: var(--tg-theme-button-color, #0088cc);
-      color: var(--tg-theme-button-text-color, #fff);
-      border: none;
-      border-radius: 5px;
-      cursor: pointer
-      transition: background-color 0.3s ease;
-    }
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: var(--tg-theme-button-color, #0088cc);
+            color: var(--tg-theme-button-text-color, #fff);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Добавляем анимацию изменения цвета кнопки */
+        }
 
     #button:hover {
       background-color: #555;
