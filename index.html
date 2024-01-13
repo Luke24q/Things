@@ -39,7 +39,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s; /* Добавляем анимацию изменения цвета кнопки */
+            transition: background-color 0.3s;
         }
     </style>
     <title>Розыгрыш Zefru shop</title>
@@ -52,10 +52,28 @@
     </div>
 
     <script>
+        // Обработчик нажатия на кнопку "Выйти"
         document.getElementById('closeBtn').addEventListener('click', function() {
             let tg = window.Telegram.WebApp;
             tg.close();
         });
+
+        // Отправка запросов к API Telegram для проверки подписки
+        fetch('https://api.telegram.org/botYOUR_TOKEN/getChatMember?chat_id=YOUR_CHANNEL_ID&user_id=YOUR_USER_ID')
+            .then(response => response.json())
+            .then(data => {
+                // Проверяем ответ от API Telegram
+                if (data.ok && data.result && data.result.status === 'member') {
+                    // Пользователь подписан на канал
+                    document.querySelector('p').textContent = 'Пользователь участвует в розыгрыше';
+                } else {
+                    // Пользователь не подписан на канал
+                    document.querySelector('p').textContent = 'Для участия в розыгрыше подпишитесь на каналы';
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при проверке подписки', error);
+            });
     </script>
 </body>
 </html>
