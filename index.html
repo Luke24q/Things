@@ -1,33 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Telegram Mini App</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script>
-    function sendMessageToTelegram(userId) {
-      var url = 'https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage?chat_id=' + userId + '&text=Привет, я получил ваш идентификатор: ' + userId;
-      fetch(url)
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Ошибка:', error));
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+      color: var(--tg-theme-text-color);
+      background: var(--tg-theme-bg-color);
+      text-align: center;
     }
 
-    function onTelegramAuth(user) {
-      sendMessageToTelegram(user.id);
+    .container {
+      max-width: 390px;
+      margin: auto;
     }
-  </script>
+
+    .img {
+      width: 300px;
+    }
+
+    .text {
+      margin: 20px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      background: #0099ff; /* синий цвет */
+      border-radius: 10px;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .btn:hover {
+      background: #0077cc; /* более темный синий цвет при наведении */
+    }
+  </style>
+  <title>Document</title>
 </head>
 <body>
-  <h1>Отправка идентификатора пользователя в бота</h1>
-  <button
-    data-telegram-login="<YOUR_BOT_USERNAME>"
-    data-size="large"
-    data-radius="10"
-    data-auth-url="https://your-website.com/redirect.html"
-    data-request-access="write">
-      Отправить идентификатор
-  </button>
+  <div class="container">
+    <img src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="" class="img">
+    <div class="text">Лютый текст.</div>
+    <button class="btn" id="btnExit">Выход</button>
+  </div>
+
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
