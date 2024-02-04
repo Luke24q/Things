@@ -4,26 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Telegram Mini App</title>
-</head>
-<body>
-  <h1>Отправка идентификатора пользователя в бота</h1>
-  
-  <form id="telegramForm">
-    <label for="userId">Введите идентификатор пользователя:</label>
-    <input type="text" id="userId" name="userId">
-    <button type="submit">Отправить</button>
-  </form>
-
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <script>
-    document.getElementById('telegramForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var userId = document.getElementById('userId').value;
+    function sendMessageToTelegram(userId) {
       var url = 'https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage?chat_id=' + userId + '&text=Привет, я получил ваш идентификатор: ' + userId;
       fetch(url)
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error('Ошибка:', error));
-    });
+    }
+
+    function onTelegramAuth(user) {
+      sendMessageToTelegram(user.id);
+    }
   </script>
+</head>
+<body>
+  <h1>Отправка идентификатора пользователя в бота</h1>
+  <button
+    data-telegram-login="<YOUR_BOT_USERNAME>"
+    data-size="large"
+    data-radius="10"
+    data-auth-url="https://your-website.com/redirect.html"
+    data-request-access="write">
+      Отправить идентификатор
+  </button>
 </body>
 </html>
