@@ -47,11 +47,21 @@
 </head>
 <body>
   <div class="container">
-    <img src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="" class="img">
-    <div class="text">Лютый текст.</div>
-    <button class="btn" id="btnExit">Выход</button>
-  </div>
+  <img src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="" class="img">
+  <div class="text">Лютый текст.</div>
+  <button class="btn" id="btnExit">Выход</button>
+  <div id="userId"></div> <!-- Этот элемент будет отображать ID пользователя -->
+</div>
+
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script>
+  window.onload = function() {
+    // Получаем ID пользователя
+    var userId = telegram.getViewerId(); // Это предполагаемый метод для получения ID пользователя
+    // Вставляем ID пользователя в элемент "userId"
+    document.getElementById("userId").innerText = "ID пользователя: " + userId;
+  };
+</script>
 </body>
 </html>
