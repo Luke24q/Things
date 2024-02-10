@@ -1,57 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-size: 18px;
-      color: var(--tg-theme-text-color);
-      background: var(--tg-theme-bg-color);
-      text-align: center;
-    }
 
-    .container {
-      max-width: 390px;
-      margin: auto;
-    }
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Shop</title>
+	<style>
+		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wqht@200;500&display=swap');
 
-    .img {
-      width: 300px;
-    }
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
 
-    .text {
-      margin: 20px 0;
-    }
+		body {
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 200;
+			color: var(--tg-theme-text-color);
+			background: var(--tg-theme-bg-color);
+		}
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      border: none;
-      background: #0099ff; /* синий цвет */
-      border-radius: 10px;
-      color: #fff;
-      text-transform: uppercase;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
 
-    .btn:hover {
-      background: #0077cc; /* более темный синий цвет при наведении */
-    }
-  </style>
-  <title>Document</title>
+		#main {
+			width: 100%;
+			padding: 20px;
+			text-align: center;
+		}
+
+		h1 {
+			margin-top: 50px;
+			margin-bottom: 10px;
+		}
+
+		img {
+			width: 70px;
+			margin: 30px auto;
+		}
+
+		p {
+			width: 350px;
+			margin: 0 auto;
+		}
+
+		button {
+			border: 0;
+			border-radius: 5px;
+			margin-top: 50px;
+			height: 60px;
+			width: 200px;
+			font-size: 20px;
+			font-weight: 500;
+			cursor: pointer;
+			transition: all 500ms ease;
+			color: var(--tg-theme-button-color);
+			background: var(--tg-theme-button-text-color);
+		}
+
+
+		button:hover {
+			background: var(--tg-theme-secondary-bg-color);
+		}
+
+	</style>
 </head>
 <body>
-  <div class="container">
-    <img src="https://img.freepik.com/premium-vector/wheel-of-fortune-lottery-luck-illustration_79145-213.jpg?size=626&ext=jpg" alt="" class="img">
-    <div class="text">Лютый текст.</div>
-    <button class="btn" id="btnExit">Выход</button>
-  </div>
-
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<div id="main">
+		<h1>Онлайн магазин</h1>
+		<img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
+		<button id="buy">Купить</button>
+	</div>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
