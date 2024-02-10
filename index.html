@@ -102,14 +102,14 @@
 
 	<script>
 		let tg = window.Telegram.WebApp;
-		let buy document.getElementsById('buy');
-		let order document.getElementsById('order');
+		let buy document.getElementById('buy');
+		let order document.getElementById('order');
 
 
 		buy.addEventListener("click", () => {
-			document.getElementsById("main").style.display = "none";
-			document.getElementsById("form").style.display = "block";
-			document.getElementsById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
+			document.getElementById("main").style.display = "none";
+			document.getElementById("form").style.display = "block";
+			document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
 		});
 
 		order.addEventListener("click", () => {
