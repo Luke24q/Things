@@ -1,155 +1,116 @@
 <!doctype html>
 <html lang="ru">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Shop</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wqht@200;500&display=swap');
 
-	<meta charset="UTF-8">
-	<meta name="viewport"
-		content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Shop</title>
-	<style>
-		@import url('https://fonts.googleapis.com/css2?family=Montserrat:wqht@200;500&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
 
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-		}
+body {
+font-family: 'Montserrat', sans-serif;
+font-weight: 200;
+color: var(--tg-theme-text-color);
+background: var(--tg-theme-bg-color);
+text-align: center;
+}
 
-		body {
-			font-family: 'Montserrat', sans-serif;
-			font-weight: 200;
-			color: var(--tg-theme-text-color);
-			background: var(--tg-theme-bg-color);
-		}
+.seller {
+margin-top: 20px;
+margin-bottom: 50px;
+color: var(--tg-theme-button-color);
+font-weight: 500;
+font-size: 24px;
+text-align: center;
+}
 
+.container {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+}
 
-		#main {
-			width: 100%;
-			padding: 20px;
-			text-align: center;
-		}
+.item {
+width: 300px;
+margin: 20px;
+padding: 15px;
+text-align: center;
+border: 1px solid #ccc;
+border-radius: 5px;
+}
 
-		h1 {
-			margin-top: 50px;
-			margin-bottom: 10px;
-		}
+.item img {
+max-width: 100%;
+height: auto;
+object-fit: contain; /* Maintain aspect ratio */
+border-radius: 10px; /* Rounded corners for images */
+margin-bottom: 10px;
+}
 
-		img {
-			width: 70px;
-			margin: 30px auto;
-		}
+.item.highlighted {
+z-index: 1; /* Raise the second item above the others */
+}
 
-		p {
-			width: 350px;
-			margin: 0 auto;
-		}
+h2 {
+margin-bottom: 10px;
+font-size: 18px;
+}
 
-		button {
-			border: 0;
-			border-radius: 5px;
-			margin-top: 50px;
-			height: 60px;
-			width: 200px;
-			font-size: 20px;
-			font-weight: 500;
-			cursor: pointer;
-			transition: all 500ms ease;
-			color: var(--tg-theme-button-color);
-			background: var(--tg-theme-button-text-color);
-		}
+p {
+margin-bottom: 10px;
+}
 
+a {
+display: block;
+text-decoration: none;
+color: var(--tg-theme-button-color);
+background: var(--tg-theme-button-text-color);
+border: 2px solid var(--tg-theme-button-color);
+padding: 10px;
+border-radius: 5px;
+transition: all 0.3s;
+}
 
-		button:hover {
-			background: var(--tg-theme-secondary-bg-color);
-		}
-
-		#form {
-			display: none;
-			text-align: center;
-		}
-
-		input {
-			width: 90%;
-			outline: none;
-			margin: 10px 5%;
-			padding: 15px 10px;
-			font-size: 14px;
-			border: 2px solid silver;
-			border-radius: 5px;
-		}
-
-		input:focus {
-			border-color: #db5d5d;
-		}
-
-	</style>
+a:hover {
+background: var(--tg-theme-secondary-bg-color);
+color: var(--tg-theme-button-text-color);
+}
+</style>
 </head>
 <body>
-	<div id="main">
-		<h1>Онлайн магазин</h1>
-		<img src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ipsum magni, molestias.</p>
-		<button id="buy">Купить</button>
-	</div>
-	<form id="form">
-		<h1>Оформление покупки</h1>
-		<input type="text" placeholder="Имя" id="user_name">
-		<input type="text" placeholder="Email" id="user_email">
-		<input type="text" placeholder="Телефон" id="user_phone">
-		<div id="error"></div>
-		<button id="order">Оформить</button>
-	</form>
-	<script src="https://telegram.org/js/telegram-web-app.js"></script>
-
-	<script>
-		let tg = window.Telegram.WebApp;
-		let buy = document.getElementById('buy');
-		let order = document.getElementById('order');
-		tg.expand();
-
-
-		buy.addEventListener("click", () => {
-			document.getElementById("main").style.display = "none";
-			document.getElementById("form").style.display = "block";
-			document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.user.last_name;
-		});
-
-		order.addEventListener("click", () => {
-			document.getElementById("error").innerText = "";
-			let name = document.getElementById("user_name").value;
-			let email = document.getElementById("user_email").value;
-			let phone = document.getElementById("user_phone").value;
-
-			if(name.length < 4) {
-				document.getElementById("error").innerText = "Ошибка в имени";
-				return;
-			}
-
-			if(email.length < 5) {
-				document.getElementById("error").innerText = "Ошибка в email";
-				return;
-			}
-
-			if(phone.length < 5) {
-				document.getElementById("error").innerText = "Ошибка в номере телефона";
-				return;
-			}
-
-
-			let data = {
-				name: name,
-				email: email,
-				phone: phone
-			}
-			tg.sendData(JSON.stringify(data));
-
-
-
-
-
-			tg.close();
-		});
-	</script>
+<h1 class="seller">Zefu Metro Shop</h1>
+<div class="container">
+<div class="item">
+<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208865472976781382/Picsart_24-02-18_22-59-35-767.jpg?ex=65e4d6b4&is=65d261b4&hm=27ff29a5b2bb92136caf9c1f3c37cca49ca475f5a1b34715f59a6fba66d06b7f&" alt="Название товара 1">
+<h2>Название товара 1</h2>
+<p>Цена: 1000 руб.</p>
+<p>Описание товара 1</p>
+<a href="https://t.me/ZEFRU1">Продавец</a>
+</div>
+<div class="item highlighted">
+<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208866663102025829/Picsart_24-02-18_23-04-20-101.jpg?ex=65e4d7d0&is=65d262d0&hm=353d983a94fd67547b3c8fd8158b1509c094aadafc636beeefc8342856dbc979&" alt="Название товара 2">
+<h2>Название товара 2</h2>
+<p>Цена: 2000 руб.</p>
+<p>Описание товара 2</p>
+<a href="https://t.me/ZEFRU1">Продавец</a>
+</div>
+<div class="item">
+<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208866133260767272/Picsart_24-02-18_23-02-10-529.jpg?ex=65e4d751&is=65d26251&hm=47ab3b715a49e6d5fd5ead8917d3c49506e7981101c5fd833266263401119f1c&" alt="Название товара 3">
+<h2>Название товара 3</h2>
+<p>Цена: 1500 руб.</p>
+<p>Описание товара 3</p>
+<a href="https://t.me/ZEFRU1">Продавец</a>
+</div>
+</div>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
