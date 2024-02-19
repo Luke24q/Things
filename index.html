@@ -2,123 +2,135 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Shop</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wqht@200;500&display=swap');
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-font-family: 'Montserrat', sans-serif;
-font-weight: 200;
-color: var(--tg-theme-text-color);
-background: var(--tg-theme-bg-color);
-text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    text-align: center;
 }
 
 .seller {
-margin-top: 20px;
-margin-bottom: 50px;
-color: var(--tg-theme-button-color);
-font-weight: 500;
-font-size: 24px;
-text-align: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: var(--tg-theme-button-color);
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
 }
 
 .container {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .item {
-width: 300px;
-margin: 20px;
-padding: 15px;
-text-align: center;
-border: 1px solid #ccc;
-border-radius: 5px;
+    width: 300px;
+    margin: 20px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    width: 42%; /* каждый элемент занимает половину ширины контейнера */
+    margin: 10px; 
 }
 
 .item img {
-max-width: 100%;
-height: auto;
-object-fit: contain; /* Maintain aspect ratio */
-border-radius: 10px; /* Rounded corners for images */
-margin-bottom: 10px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .item.highlighted {
-z-index: 1; /* Raise the second item above the others */
+    z-index: 1;
 }
 
 h2 {
-margin-bottom: 10px;
-font-size: 18px;
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
 p {
-margin-bottom: 10px;
-color: var(--tg-theme-hint-color);
+    margin-bottom: 10px;
+    color: var(--tg-theme-hint-color);
 }
 
 a {
-display: block;
-text-decoration: none;
-color: var(--tg-theme-button-color);
-background: var(--tg-theme-button-text-color);
-border: 2px solid var(--tg-theme-button-color);
-padding: 10px;
-border-radius: 5px;
-transition: all 0.3s;
+    display: block;
+    text-decoration: none;
+    color: var(--tg-theme-button-color);
+    background: var(--tg-theme-button-text-color);
+    border: 2px solid var(--tg-theme-button-color);
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s;
 }
 
 a:hover {
-background: var(--tg-theme-secondary-bg-color);
-color: var(--tg-theme-button-text-color);
+    background: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-button-text-color);
 }
 </style>
 </head>
 <body>
 <h1 class="seller">Zefu Metro Shop</h1>
 <div class="container">
-<div class="item">
-<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208865472976781382/Picsart_24-02-18_22-59-35-767.jpg?ex=65e4d6b4&is=65d261b4&hm=27ff29a5b2bb92136caf9c1f3c37cca49ca475f5a1b34715f59a6fba66d06b7f&" alt="Шлем">
-<h2>Шлем</h2>
-<p>Цена: 50 руб.</p>
-<p>Шлем для вашиз уникальных сражений в Pubg Metro Royal</p>
-<a href="https://t.me/ZEFRU1">Купить</a>
-</div>
-<div class="item highlighted">
-<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208866663102025829/Picsart_24-02-18_23-04-20-101.jpg?ex=65e4d7d0&is=65d262d0&hm=353d983a94fd67547b3c8fd8158b1509c094aadafc636beeefc8342856dbc979&" alt="Оружие">
-<h2>Mk14</h2>
-<p>Цена: 100 руб.</p>
-<p>Какая-то пукалка лютаяяяяя</p>
-<a href="https://t.me/ZEFRU1">Купить</a>
-</div>
-<div class="item">
-<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208866133260767272/Picsart_24-02-18_23-02-10-529.jpg?ex=65e4d751&is=65d26251&hm=47ab3b715a49e6d5fd5ead8917d3c49506e7981101c5fd833266263401119f1c&" alt="Бронежелет">
-<h2>6 Бронежелет</h2>
-<p>Цена: 50 руб.</p>
-<p>Описание товара 3</p>
-<a href="https://t.me/ZEFRU1">Купить</a>
-</div>
-<div class="item">
-<img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208872147519545364/Picsart_24-02-18_23-26-05-311.jpg?ex=65e4dceb&is=65d267eb&hm=c8ac824cddf0e0623d1c711fe1c2f4a6859bde25de29bb297e5f02b2e7fdba2e&" alt="Рюкзак">
-<h2>6 Рюкзак</h2>
-<p>Цена: 50 руб.</p>
-<p>Рюкзак чтобы сложить головы ваших врагов в Pubg Metro Royal</p>
-<a href="https://t.me/ZEFRU1">Купить</a>
-</div>
+    <div class="item">
+        <div class="images-container">
+            <div class="image">
+                <img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208865472976781382/Picsart_24-02-18_22-59-35-767.jpg?ex=65e4d6b4&is=65d261b4&hm=27ff29a5b2bb92136caf9c1f3c37cca49ca475f5a1b34715f59a6fba66d06b7f&" alt="Шлем">
+            </div>
+            <div class="image">
+                <img src="https://cdn.discordapp.com/attachments/1208140410849984553/1209247602525216768/Picsart_24-02-20_00-17-53-279.png?ex=65e63a97&is=65d3c597&hm=e4e626097c609fed3fe8ddd817c1f4ef381427a9bb29d946d2038212ea149a11&" alt="Оружие">
+            </div>
+            <div class="image">
+                <img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208866133260767272/Picsart_24-02-18_23-02-10-529.jpg?ex=65e4d751&is=65d26251&hm=47ab3b715a49e6d5fd5ead8917d3c49506e7981101c5fd833266263401119f1c&" alt="Бронежелет">
+            </div>
+            <div class="image">
+                <img src="https://cdn.discordapp.com/attachments/1208140410849984553/1208872147519545364/Picsart_24-02-18_23-26-05-311.jpg?ex=65e4dceb&is=65d267eb&hm=c8ac824cddf0e0623d1c711fe1c2f4a6859bde25de29bb297e5f02b2e7fdba2e&" alt="Рюкзак">
+            </div>
+        </div>
+        <h2>6 сет</h2>
+        <p>Цена: 100 руб.</p>
+        <p>Сет для ваших сражений в Pubg Metro Royal</p>
+        <a href="ссылка">Купить</a>
+    </div>
 </div>
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
